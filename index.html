@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibe Coding 速通教程</title>
+  <meta name="description" content="5 分钟理解 Vibe Coding，10 分钟掌握 Agent 开发核心">
+  <meta name="keywords" content="Vibe Coding, AI编程, Agent开发, Prompt工程, LLM, MCP, A2A, OpenClaw, Claude, Codex">
+  <meta name="author" content="Vibe Coding Tutorial">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Vibe Coding 速通教程">
+  <meta property="og:description" content="5 分钟理解 Vibe Coding，10 分钟掌握 Agent 开发核心">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_CN">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Vibe Coding 速通教程">
+  <meta name="twitter:description" content="5 分钟理解 Vibe Coding，10 分钟掌握 Agent 开发核心">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/slides.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-content">
+      <div class="logo"><span class="logo-icon">⚡</span><span class="logo-text">Vibe Coding</span></div>
+      <div class="nav-links" id="navLinks" role="navigation" aria-label="主导航">
+        <a href="#hero" class="nav-link active" data-section="hero">首页</a>
+        <a href="#ch1" class="nav-link" data-section="ch1">认识</a>
+        <a href="#ch2" class="nav-link" data-section="ch2">工具</a>
+        <a href="#ch3" class="nav-link" data-section="ch3">Agent</a>
+        <a href="#ch4" class="nav-link" data-section="ch4">协议</a>
+        <a href="#ch5" class="nav-link" data-section="ch5">实战</a>
+        <a href="#ch7" class="nav-link" data-section="ch7">教程</a>
+        <a href="#ch6" class="nav-link" data-section="ch6">思维</a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks" aria-label="切换导航菜单"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="progress-bar" id="progressBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="页面滚动进度"><div class="progress-fill" id="progressFill"></div></div>
+
+  <!-- 左右滑动容器 -->
+  <div class="slides-container" id="slidesContainer">
+    <!-- Slide 1: 首页 -->
+    <section class="slide hero" id="hero">
+      <div class="hero-bg"><div class="gradient-orb orb-1"></div><div class="gradient-orb orb-2"></div><div class="gradient-orb orb-3"></div></div>
+      <div class="hero-content">
+        <div class="hero-badge animate-fade-in">🚀 5 分钟速通 · 2025-2026</div>
+        <h1 class="hero-title animate-fade-in-up"><span class="gradient-text">Vibe Coding</span><br>速通教程</h1>
+        <p class="hero-subtitle animate-fade-in-up delay-1">用自然语言编程，让 AI 成为你的搭档</p>
+        <div class="hero-stats animate-fade-in-up delay-2">
+          <div class="stat-item"><span class="stat-number">8</span><span class="stat-label">核心章节</span></div>
+          <div class="stat-item"><span class="stat-number">10+</span><span class="stat-label">模型框架</span></div>
+          <div class="stat-item"><span class="stat-number">~10</span><span class="stat-label">分钟掌握</span></div>
+        </div>
+        <button class="hero-cta animate-fade-in-up delay-3" onclick="goToSlide(1)">开始学习 <span class="arrow">→</span></button>
+      </div>
+      <div class="scroll-indicator animate-bounce"><div class="mouse"><div class="wheel"></div></div></div>
+    </section>
+
+    <!-- Slide 2: 什么是 Vibe Coding -->
+    <section class="slide chapter" id="ch1">
+      <div class="chapter-header">
+        <span class="chapter-number">01</span>
+        <h2 class="chapter-title">什么是 <span class="gradient-text">Vibe Coding</span></h2>
+      </div>
+      <div class="chapter-content">
+        <div class="concept-card glass-card reveal">
+          <blockquote class="quote">"There's a new kind of coding I call 'vibe coding', where you fully give in to the vibes, embrace exponentials, and forget that the code even exists." — Andrej Karpathy, 2025</blockquote>
+          <p class="translation">"沉浸氛围，拥抱变化，忘记代码的存在。"</p>
+        </div>
+        <div class="comparison-grid reveal">
+          <div class="compare-card glass-card">
+            <h4>🔲 传统编程</h4>
+            <ul><li>逐行写代码</li><li>记忆语法</li><li>手动调试</li></ul>
+          </div>
+          <div class="compare-vs">VS</div>
+          <div class="compare-card glass-card highlight-card">
+            <h4>⚡ Vibe Coding</h4>
+            <ul><li>自然语言描述需求</li><li>AI 生成代码</li><li>对话式迭代</li></ul>
+          </div>
+        </div>
+        <details class="deep-dive reveal">
+          <summary>📖 深入理解：核心理念</summary>
+          <div class="deep-content">
+            <div class="points-grid">
+              <div class="point-card glass-card"><span class="point-icon">🎯</span><h4>意图驱动</h4><p>描述"做什么"，而非"怎么做"</p></div>
+              <div class="point-card glass-card"><span class="point-icon">🔄</span><h4>对话迭代</h4><p>通过自然语言持续优化</p></div>
+              <div class="point-card glass-card"><span class="point-icon">🧠</span><h4>思维优先</h4><p>聚焦业务逻辑，非语法细节</p></div>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- Slide 3: 工具链 & Prompt -->
+    <section class="slide chapter" id="ch2">
+      <div class="chapter-header">
+        <span class="chapter-number">02</span>
+        <h2 class="chapter-title"><span class="gradient-text">工具链</span> & Prompt</h2>
+      </div>
+      <div class="chapter-content">
+        <div class="reveal">
+          <h3 class="section-title">🛠️ 核心工具</h3>
+          <div class="comparison-table glass-card">
+            <table>
+              <thead><tr><th>工具</th><th>定位</th><th>上手</th><th>上限</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Cursor</strong></td><td>专业开发</td><td><div class="difficulty-bar"><span style="width:60%"></span></div></td><td><div class="difficulty-bar full"><span style="width:95%"></span></div></td></tr>
+                <tr><td><strong>Bolt.new</strong></td><td>快速原型</td><td><div class="difficulty-bar"><span style="width:20%"></span></div></td><td><div class="difficulty-bar"><span style="width:70%"></span></div></td></tr>
+                <tr><td><strong>Cline</strong></td><td>复杂任务</td><td><div class="difficulty-bar"><span style="width:50%"></span></div></td><td><div class="difficulty-bar full"><span style="width:90%"></span></div></td></tr>
+                <tr><td><strong>Windsurf</strong></td><td>全栈开发</td><td><div class="difficulty-bar"><span style="width:40%"></span></div></td><td><div class="difficulty-bar full"><span style="width:92%"></span></div></td></tr>
+                <tr><td><strong>GitHub Copilot</strong></td><td>代码补全</td><td><div class="difficulty-bar"><span style="width:30%"></span></div></td><td><div class="difficulty-bar"><span style="width:85%"></span></div></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="reveal">
+          <h3 class="section-title">✍️ Prompt 三要素</h3>
+          <div class="technique-cards">
+            <div class="technique-card glass-card">
+              <div class="technique-header"><span class="technique-num">01</span><h4>结构化描述</h4></div>
+              <div class="code-block"><pre><code>## 需求：任务管理 API
+## 技术栈：Python + FastAPI
+## 功能：CRUD + 优先级排序</code></pre></div>
+            </div>
+            <div class="technique-card glass-card">
+              <div class="technique-header"><span class="technique-num">02</span><h4>角色设定</h4></div>
+              <div class="code-block"><pre><code>你是资深 Python 工程师,
+擅长高并发 Web 架构。
+请用 FastAPI 实现...</code></pre></div>
+            </div>
+            <div class="technique-card glass-card">
+              <div class="technique-header"><span class="technique-num">03</span><h4>Few-shot 示例</h4></div>
+              <div class="code-block"><pre><code>输入: "创建按钮"
+输出: &lt;Button variant="primary"
+  onClick={handleClick}&gt;
+  点击我
+&lt;/Button&gt;</code></pre></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 4: LLM 模型选择 + 排行榜 -->
+    <section class="slide chapter" id="ch2b">
+      <div class="chapter-header">
+        <span class="chapter-number">02b</span>
+        <h2 class="chapter-title"><span class="gradient-text">LLM 模型</span>能力对比 & 排行榜</h2>
+      </div>
+      <div class="chapter-content">
+        <!-- 主流模型卡片 -->
+        <div class="reveal">
+          <h3 class="section-title">🤖 2026 年主流 LLM 模型</h3>
+          <div class="framework-cards">
+            <div class="framework-card glass-card">
+              <div class="fw-header"><span class="fw-logo">🧠</span><div><h4><a href="https://docs.anthropic.com/en/docs/about-claude/models" target="_blank" style="color:inherit;text-decoration:none">Claude Opus 4.8</a></h4><span class="fw-tag">Agent 之王</span></div></div>
+              <p class="fw-desc">Anthropic 旗舰，编码/Agent/专业工作最强，估值 $965B</p>
+            </div>
+            <div class="framework-card glass-card">
+              <div class="fw-header"><span class="fw-logo">⚡</span><div><h4><a href="https://openai.com/index/introducing-gpt-5/" target="_blank" style="color:inherit;text-decoration:none">GPT-5.5</a></h4><span class="fw-tag">综合最强</span></div></div>
+              <p class="fw-desc">OpenAI 最新旗舰，统一推理系统，AIME 94.6%</p>
+            </div>
+            <div class="framework-card glass-card">
+              <div class="fw-header"><span class="fw-logo">🔥</span><div><h4><a href="https://www.deepseek.com/" target="_blank" style="color:inherit;text-decoration:none">DeepSeek V4</a></h4><span class="fw-tag">🇨🇳 国产之光</span></div></div>
+              <p class="fw-desc">世界顶级推理，Agent 能力大幅提高，开源+极致性价比</p>
+            </div>
+            <div class="framework-card glass-card">
+              <div class="fw-header"><span class="fw-logo">🌟</span><div><h4><a href="https://ai.google.dev/gemini-api/docs" target="_blank" style="color:inherit;text-decoration:none">Gemini 3.1 Pro</a></h4><span class="fw-tag">多模态强</span></div></div>
+              <p class="fw-desc">Google 最新，极速推理+多模态，100 万 token 上下文</p>
+            </div>
+            <div class="framework-card glass-card">
+              <div class="fw-header"><span class="fw-logo">🇨🇳</span><div><h4><a href="https://qwen.ai/" target="_blank" style="color:inherit;text-decoration:none">Qwen 3.7 Max</a></h4><span class="fw-tag">通义千问</span></div></div>
+              <p class="fw-desc">阿里旗舰，92 语言翻译+图像生成+GSPO 强化学习</p>
+            </div>
+            <div class="framework-card glass-card">
+              <div class="fw-header"><span class="fw-logo">🇨🇳</span><div><h4><a href="https://open.bigmodel.cn/" target="_blank" style="color:inherit;text-decoration:none">GLM-5.1</a></h4><span class="fw-tag">智谱AI</span></div></div>
+              <p class="fw-desc">中文理解顶尖，企业级部署成熟，开源生态</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- LiveBench 排行榜 -->
+        <div class="reveal">
+          <h3 class="section-title">🏆 LiveBench 综合能力排行 <a href="https://livebench.ai/" target="_blank" style="font-size:0.6em;color:var(--accent-1);text-decoration:none">🔗 livebench.ai</a></h3>
+          <div class="comparison-table glass-card" style="overflow-x:auto">
+            <table>
+              <thead>
+                <tr><th>排名</th><th>模型</th><th>厂商</th><th>综合分</th><th>数学</th><th>编码</th><th>推理</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>🥇 1</td><td><strong>GPT-5.5 Thinking</strong></td><td>OpenAI</td><td><strong>80.71</strong></td><td>87.71</td><td>96.32</td><td>87.66</td></tr>
+                <tr><td>🥈 2</td><td><strong>GPT-5.4 Thinking</strong></td><td>OpenAI</td><td><strong>80.28</strong></td><td>88.12</td><td>94.15</td><td>82.63</td></tr>
+                <tr><td>🥉 3</td><td><strong>Gemini 3.1 Pro</strong></td><td>Google</td><td><strong>79.93</strong></td><td>84.00</td><td>91.04</td><td>85.38</td></tr>
+                <tr><td>4</td><td><strong>Claude 4.8 Opus</strong></td><td>Anthropic</td><td><strong>77.22</strong></td><td>89.71</td><td>84.32</td><td>81.42</td></tr>
+                <tr><td>5</td><td><strong>Gemini 3.5 Flash</strong></td><td>Google</td><td><strong>75.02</strong></td><td>82.00</td><td>88.24</td><td>84.58</td></tr>
+                <tr><td>6</td><td><strong>Qwen 3.7 Max</strong></td><td>阿里</td><td><strong>74.29</strong></td><td>83.34</td><td>85.25</td><td>79.74</td></tr>
+                <tr><td>7</td><td><strong>DeepSeek V4 Pro</strong></td><td>深度求索</td><td><strong>73.58</strong></td><td>82.69</td><td>90.68</td><td>78.13</td></tr>
+                <tr><td>8</td><td><strong>GLM-5.1</strong></td><td>智谱AI</td><td><strong>70.18</strong></td><td>72.52</td><td>84.89</td><td>71.78</td></tr>
+                <tr><td>9</td><td><strong>Kimi K2.6</strong></td><td>月之暗面</td><td><strong>72.17</strong></td><td>79.38</td><td>84.28</td><td>75.14</td></tr>
+                <tr><td>10</td><td><strong>Grok 4.3</strong></td><td>xAI</td><td><strong>66.74</strong></td><td>70.82</td><td>84.34</td><td>73.58</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- SWE-bench 编码排行榜 -->
+        <div class="reveal">
+          <h3 class="section-title">💻 SWE-bench Verified 编码排行 <a href="https://www.swebench.com/" target="_blank" style="font-size:0.6em;color:var(--accent-1);text-decoration:none">🔗 swebench.com</a></h3>
+          <div class="comparison-table glass-card" style="overflow-x:auto">
+            <table>
+              <thead>
+                <tr><th>排名</th><th>模型</th><th>解决率</th><th>成本</th><th>特点</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>🥇 1</td><td><strong>Claude 4.5 Opus (high)</strong></td><td><strong>76.80%</strong></td><td>$0.75</td><td>Agent 编码最强</td></tr>
+                <tr><td>🥈 2</td><td><strong>Gemini 3 Flash (high)</strong></td><td><strong>75.80%</strong></td><td>$0.36</td><td>性价比之王</td></tr>
+                <tr><td>🥈 2</td><td><strong>MiniMax M2.5 (high)</strong></td><td><strong>75.80%</strong></td><td>$0.07</td><td>超低成本</td></tr>
+                <tr><td>4</td><td><strong>Claude Opus 4.6</strong></td><td><strong>75.60%</strong></td><td>$0.55</td><td>稳定输出</td></tr>
+                <tr><td>5</td><td><strong>GPT-5.2 Codex</strong></td><td><strong>72.80%</strong></td><td>$0.45</td><td>代码专用</td></tr>
+                <tr><td>5</td><td><strong>GLM-5 (high)</strong></td><td><strong>72.80%</strong></td><td>$0.53</td><td>🇨🇳 国产最强</td></tr>
+                <tr><td>7</td><td><strong>Kimi K2.5 (high)</strong></td><td><strong>70.80%</strong></td><td>$0.15</td><td>高性价比</td></tr>
+                <tr><td>8</td><td><strong>DeepSeek V3.2 (high)</strong></td><td><strong>70.00%</strong></td><td>$0.45</td><td>开源标杆</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 排行榜来源 -->
+        <div class="protocol-card glass-card reveal">
+          <div class="protocol-header"><span class="protocol-icon">📊</span><div><h3>权威排行榜来源</h3></div></div>
+          <div class="points-grid" style="grid-template-columns:repeat(2,1fr)">
+            <div class="point-card glass-card" style="cursor:pointer" onclick="window.open('https://livebench.ai/','_blank')">
+              <span class="point-icon">📈</span><h4>LiveBench</h4><p>ICLR 2025 Spotlight，无污染客观评测，23 类任务</p>
+            </div>
+            <div class="point-card glass-card" style="cursor:pointer" onclick="window.open('https://www.swebench.com/','_blank')">
+              <span class="point-icon">💻</span><h4>SWE-bench</h4><p>软件工程真实 Bug 修复，编码能力金标准</p>
+            </div>
+            <div class="point-card glass-card" style="cursor:pointer" onclick="window.open('https://lmarena.ai/','_blank')">
+              <span class="point-icon">🗳️</span><h4>Chatbot Arena</h4><p>LMSYS 人类盲评，ELO 排名，最接近真实体验</p>
+            </div>
+            <div class="point-card glass-card" style="cursor:pointer" onclick="window.open('https://aider.chat/docs/leaderboards/','_blank')">
+              <span class="point-icon">⌨️</span><h4>Aider Polyglot</h4><p>多语言代码编辑能力，225 道 Exercism 题目</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 5: Agent 术语 & Skill 体系 -->
+    <section class="slide chapter" id="ch3a">
+      <div class="chapter-header">
+        <span class="chapter-number">03a</span>
+        <h2 class="chapter-title"><span class="gradient-text">Agent 术语</span> & Skill 体系</h2>
+      </div>
+      <div class="chapter-content">
+        <!-- 核心术语 -->
+        <div class="reveal">
+          <h3 class="section-title">📖 核心术语速查</h3>
+          <div class="comparison-table glass-card" style="overflow-x:auto">
+            <table>
+              <thead><tr><th>术语</th><th>英文</th><th>解释</th><th>类比</th></tr></thead>
+              <tbody>
+                <tr><td><strong>技能</strong></td><td>Skill</td><td><a href="https://docs.crewai.com/concepts/skills" target="_blank" style="color:var(--accent-1)">注入 Agent 的领域知识和指令</a>（SKILL.md 文件）</td><td>员工的"操作手册"</td></tr>
+                <tr><td><strong>工具</strong></td><td>Tool</td><td><a href="https://docs.anthropic.com/en/docs/build-with-claude/tool-use/overview" target="_blank" style="color:var(--accent-1)">Agent 可调用的函数</a>（搜索、读文件、调 API）</td><td>员工的"工具箱"</td></tr>
+                <tr><td><strong>MCP</strong></td><td>Model Context Protocol</td><td><a href="https://modelcontextprotocol.io/introduction" target="_blank" style="color:var(--accent-1)">Agent 连接外部数据/工具的标准化协议</a></td><td>"USB-C 接口"</td></tr>
+                <tr><td><strong>A2A</strong></td><td>Agent-to-Agent</td><td><a href="https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/" target="_blank" style="color:var(--accent-1)">Agent 之间互相通信的 HTTP 协议</a></td><td>"Agent 的 HTTP"</td></tr>
+                <tr><td><strong>上下文</strong></td><td>Context</td><td>Agent 当前能"看到"的所有信息</td><td>"工作台面"</td></tr>
+                <tr><td><strong>RAG</strong></td><td>Retrieval-Augmented Generation</td><td><a href="https://docs.smith.langchain.com/oss/python/langchain/tracing_concepts" target="_blank" style="color:var(--accent-1)">检索增强生成</a>：先检索相关文档，再让 LLM 生成回答</td><td>"开卷考试"</td></tr>
+                <tr><td><strong>Guardrails</strong></td><td>安全护栏</td><td><a href="https://docs.nvidia.com/nemo/guardrails/user-guide/overview.html" target="_blank" style="color:var(--accent-1)">限制 Agent 行为的安全边界</a></td><td>"安全围栏"</td></tr>
+                <tr><td><strong>沙箱</strong></td><td>Sandbox</td><td><a href="https://docs.openai.com/docs/guides/sandbox" target="_blank" style="color:var(--accent-1)">隔离的安全执行环境</a></td><td>"安全实验室"</td></tr>
+                <tr><td><strong>记忆</strong></td><td>Memory</td><td><a href="https://docs.langchain.com/oss/python/langchain/memory" target="_blank" style="color:var(--accent-1)">Agent 的长期/短期记忆存储</a></td><td>"笔记本"</td></tr>
+                <tr><td><strong>规划</strong></td><td>Planning</td><td><a href="https://docs.langchain.com/oss/python/langchain/expression_language/how-to/lcel_cheatsheet" target="_blank" style="color:var(--accent-1)">Agent 将复杂任务拆解为子步骤的能力</a></td><td>"做计划"</td></tr>
+                <tr><td><strong>反思</strong></td><td>Reflection</td><td><a href="https://python.langchain.com/docs/how_to/reflection/" target="_blank" style="color:var(--accent-1)">Agent 审视自身输出并改进的能力</a></td><td>"自我检查"</td></tr>
+                <tr><td><strong>Function Calling</strong></td><td>函数调用</td><td><a href="https://platform.openai.com/docs/guides/function-calling" target="_blank" style="color:var(--accent-1)">LLM 输出结构化 JSON 来调用外部函数</a></td><td>"下指令"</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Skill 体系 -->
+        <div class="reveal">
+          <h3 class="section-title">🎯 Skill vs Tool：关键区别</h3>
+          <div class="comparison-grid">
+            <div class="compare-card glass-card">
+              <h4>📝 Skill（技能）</h4>
+              <ul>
+                <li>注入 Agent 的<strong>指令和知识</strong></li>
+                <li>告诉 Agent <strong>"怎么做"</strong></li>
+                <li>SKILL.md 文件定义</li>
+                <li>例：代码审查规范、写作风格指南</li>
+              </ul>
+            </div>
+            <div class="compare-vs">+</div>
+            <div class="compare-card glass-card highlight-card">
+              <h4>🔧 Tool（工具）</h4>
+              <ul>
+                <li>Agent 可调用的<strong>函数</strong></li>
+                <li>让 Agent <strong>"能做什么"</strong></li>
+                <li>代码定义，有输入输出</li>
+                <li>例：搜索、读文件、调 API</li>
+              </ul>
+            </div>
+          </div>
+          <div class="protocol-card glass-card" style="margin-top:16px">
+            <p class="protocol-desc" style="text-align:center;font-size:1.1rem">
+              <strong>公式：</strong>Agent = LLM + <span style="color:var(--accent-1)">Skills（专业知识）</span> + <span style="color:var(--accent-2)">Tools（执行能力）</span> + Memory + Planning
+            </p>
+          </div>
+        </div>
+
+        <!-- Skill 目录结构 -->
+        <details class="deep-dive reveal">
+          <summary>📂 Skill 目录结构 & 示例</summary>
+          <div class="deep-content">
+            <div class="code-block"><pre><code>skills/
+└── code-review/
+    ├── SKILL.md          # 必须 — 前置元数据 + 指令
+    ├── references/       # 可选 — 参考文档
+    │   └── style-guide.md
+    └── scripts/          # 可选 — 可执行脚本</code></pre></div>
+            <div class="code-block"><pre><code>---
+name: code-review
+description: 代码审查的安全和性能检查清单
+---
+
+## 审查清单
+1. **安全**：检查注入漏洞、认证绕过
+2. **性能**：检查 N+1 查询、阻塞调用
+3. **可读性**：命名清晰、注释适当
+4. **测试**：新功能是否有测试覆盖</code></pre></div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- Slide 6: Agent 架构与框架全景 -->
+    <section class="slide chapter" id="ch3">
+      <div class="chapter-header">
+        <span class="chapter-number">03</span>
+        <h2 class="chapter-title">Agent <span class="gradient-text">架构与框架全景</span></h2>
+      </div>
+      <div class="chapter-content">
+        <div class="agent-arch reveal">
+          <div class="arch-diagram">
+            <div class="arch-node glass-card node-input"><span class="node-icon">👤</span><span>用户输入</span></div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-node glass-card node-llm"><span class="node-icon">🧠</span><span>LLM 大脑</span><small>思考 & 决策</small></div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-node glass-card node-tools"><span class="node-icon">🔧</span><span>工具调用</span><small>执行动作</small></div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-node glass-card node-output"><span class="node-icon">📊</span><span>输出结果</span></div>
+          </div>
+          <div class="arch-loop"><div class="loop-label">🔄 Agent = LLM + Tools + Memory + Planning</div></div>
+        </div>
+
+        <!-- 主流框架卡片 -->
+        <div class="reveal">
+          <h3 class="section-title">🦞 2026 GitHub 最热 Agent 框架</h3>
+          <div class="framework-cards">
+            <div class="framework-card glass-card">
+              <div class="fw-header"><span class="fw-logo">🦞</span><div><h4><a href="https://github.com/openclaw/openclaw" target="_blank" style="color:inherit;text-decoration:none">OpenClaw</a></h4><span class="fw-tag">⭐ 最热门</span></div></div>
+              <p class="fw-desc">你的私人 AI 助手。任何系统、任何平台。Skills + Memory + MCP，7,975+ 生态仓库</p>
+              <div class="code-block small"><pre><code># 安装 OpenClaw
+npm install -g openclaw
+# 启动
+openclaw --model claude-opus-4-8
+# 安装技能
+openclaw skill install web-research
+openclaw skill install code-executor</code></pre></div>
+            </div>
+            <div class="framework-card glass-card">
+              <div class="fw-header"><span class="fw-logo">🔥</span><div><h4><a href="https://github.com/NousResearch/hermes-agent" target="_blank" style="color:inherit;text-decoration:none">Hermes Agent</a></h4><span class="fw-tag">⭐ 180K</span></div></div>
+              <p class="fw-desc">NousResearch 出品，"与你一起成长的 Agent"，今日 +1,735 ⭐</p>
+              <div class="code-block small"><pre><code>from hermes import HermesAgent
+agent = HermesAgent(
+    model="claude-opus-4-8",
+    tools=["web", "code", "memory"]
+)
+result = agent.run("分析报告")</code></pre></div>
+            </div>
+            <div class="framework-card glass-card">
+              <div class="fw-header"><span class="fw-logo">🧠</span><div><h4><a href="https://openai.github.io/openai-agents-python/" target="_blank" style="color:inherit;text-decoration:none">OpenAI Agents SDK</a></h4><span class="fw-tag">官方推荐</span></div></div>
+              <p class="fw-desc">最轻量官方框架，支持 Sandbox/Realtime/Sessions/Codex CLI</p>
+              <div class="code-block small"><pre><code>from agents import Agent, Runner
+agent = Agent(name="助手", tools=[search])
+result = Runner.run_sync(agent, "你好")</code></pre></div>
+            </div>
+            <div class="framework-card glass-card">
+              <div class="fw-header"><span class="fw-logo">🦜</span><div><h4><a href="https://github.com/langchain-ai/langgraph" target="_blank" style="color:inherit;text-decoration:none">LangGraph</a></h4><span class="fw-tag">最灵活</span></div></div>
+              <p class="fw-desc">图结构编排，循环/分支/状态管理，LangChain 生态</p>
+            </div>
+            <div class="framework-card glass-card">
+              <div class="fw-header"><span class="fw-logo">🪟</span><div><h4><a href="https://github.com/microsoft/autogen" target="_blank" style="color:inherit;text-decoration:none">Microsoft AutoGen</a></h4><span class="fw-tag">企业级</span></div></div>
+              <p class="fw-desc">多 Agent 协作框架，原生 A2A + MCP 支持，.NET/Python</p>
+            </div>
+            <div class="framework-card glass-card">
+              <div class="fw-header"><span class="fw-logo">🎯</span><div><h4><a href="https://github.com/crewAIInc/crewAI" target="_blank" style="color:inherit;text-decoration:none">CrewAI</a></h4><span class="fw-tag">团队协作</span></div></div>
+              <p class="fw-desc">模拟团队分工，角色定义直观，多 Agent 协作首选</p>
+            </div>
+            <div class="framework-card glass-card">
+              <div class="fw-header"><span class="fw-logo">🔥</span><div><h4><a href="https://github.com/langgenius/dify" target="_blank" style="color:inherit;text-decoration:none">Dify</a></h4><span class="fw-tag">低代码</span></div></div>
+              <p class="fw-desc">可视化编排，无需代码，内置 RAG 引擎，企业部署首选</p>
+            </div>
+            <div class="framework-card glass-card">
+              <div class="fw-header"><span class="fw-logo">📦</span><div><h4><a href="https://github.com/supermemoryai/supermemory" target="_blank" style="color:inherit;text-decoration:none">Supermemory</a></h4><span class="fw-tag">⭐ 25K</span></div></div>
+              <p class="fw-desc">AI 记忆引擎 API，让 Agent 拥有长期记忆能力</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 可视化对比表 -->
+        <div class="reveal">
+          <h3 class="section-title">📊 框架对比一览</h3>
+          <div class="comparison-table glass-card" style="overflow-x:auto">
+            <table>
+              <thead>
+                <tr>
+                  <th>框架</th>
+                  <th>定位</th>
+                  <th>语言</th>
+                  <th>上手</th>
+                  <th>MCP</th>
+                  <th>多Agent</th>
+                  <th>最佳场景</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>🦞 OpenClaw</strong></td><td>私人助手</td><td>TS</td><td><div class="difficulty-bar"><span style="width:25%"></span></div></td><td>✅</td><td>✅</td><td>个人全能助手</td></tr>
+                <tr><td><strong>🔥 Hermes</strong></td><td>成长型Agent</td><td>Py</td><td><div class="difficulty-bar"><span style="width:30%"></span></div></td><td>✅</td><td>✅</td><td>研究+编码</td></tr>
+                <tr><td><strong>🧠 OpenAI SDK</strong></td><td>官方轻量</td><td>Py</td><td><div class="difficulty-bar"><span style="width:20%"></span></div></td><td>✅</td><td>✅</td><td>快速原型</td></tr>
+                <tr><td><strong>🦜 LangGraph</strong></td><td>图编排</td><td>Py</td><td><div class="difficulty-bar"><span style="width:55%"></span></div></td><td>✅</td><td>✅</td><td>复杂工作流</td></tr>
+                <tr><td><strong>🪟 AutoGen</strong></td><td>企业协作</td><td>Py/.NET</td><td><div class="difficulty-bar"><span style="width:50%"></span></div></td><td>✅</td><td>✅</td><td>企业多Agent</td></tr>
+                <tr><td><strong>🎯 CrewAI</strong></td><td>团队模拟</td><td>Py</td><td><div class="difficulty-bar"><span style="width:35%"></span></div></td><td>✅</td><td>✅</td><td>角色协作</td></tr>
+                <tr><td><strong>🔥 Dify</strong></td><td>低代码</td><td>Python</td><td><div class="difficulty-bar"><span style="width:15%"></span></div></td><td>✅</td><td>✅</td><td>非技术人员</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 6: 协议与前沿 -->
+    <section class="slide chapter" id="ch4">
+      <div class="chapter-header">
+        <span class="chapter-number">04</span>
+        <h2 class="chapter-title">协议与<span class="gradient-text">前沿</span></h2>
+      </div>
+      <div class="chapter-content">
+        <div class="protocol-card glass-card reveal">
+          <div class="protocol-header"><span class="protocol-icon">🔌</span><div><h3>MCP + A2A</h3><span class="protocol-tag">Agent 互操作双协议</span></div></div>
+          <div class="protocol-arch">
+            <div class="pa-node glass-card"><span>🖥️</span><span>LLM 应用</span></div>
+            <div class="pa-arrow">◄─</div>
+            <div class="pa-node glass-card highlight"><span>🔌</span><span>MCP</span></div>
+            <div class="pa-arrow">─►</div>
+            <div class="pa-node glass-card"><span>🔧</span><span>工具/数据</span></div>
+          </div>
+          <p class="protocol-desc"><strong>MCP</strong>：Agent ↔ 工具（USB-C 接口）&nbsp;&nbsp;|&nbsp;&nbsp;<strong>A2A</strong>：Agent ↔ Agent（HTTP 协议，v1.0 正式版）</p>
+        </div>
+        <div class="trends-grid reveal">
+          <div class="trend-card glass-card"><div class="trend-icon">🤖</div><h4><a href="https://www.anthropic.com/engineering/building-effective-agents" target="_blank" style="color:inherit;text-decoration:none">Agentic Workflow</a></h4><p>自主规划→执行→反思的完整工作流</p></div>
+          <div class="trend-card glass-card"><div class="trend-icon">👥</div><h4><a href="https://docs.crewai.com/concepts/crews" target="_blank" style="color:inherit;text-decoration:none">Multi-Agent</a></h4><p>多 Agent 协作，模拟团队分工</p></div>
+          <div class="trend-card glass-card"><div class="trend-icon">🛡️</div><h4><a href="https://docs.nvidia.com/nemo/guardrails/user-guide/overview.html" target="_blank" style="color:inherit;text-decoration:none">Agent 安全</a></h4><p>沙箱执行 + Guardrails + 零信任</p></div>
+          <div class="trend-card glass-card"><div class="trend-icon">💻</div><h4><a href="https://docs.anthropic.com/en/docs/agents-and-tools/computer-use" target="_blank" style="color:inherit;text-decoration:none">Computer Use</a></h4><p>AI 像人一样操作电脑界面</p></div>
+          <div class="trend-card glass-card"><div class="trend-icon">🧠</div><h4><a href="https://research.google/pubs/agentic-retrieval-a-new-frontier-in-information-access/" target="_blank" style="color:inherit;text-decoration:none">Agentic RAG</a></h4><p>Agent 驱动的智能检索</p></div>
+          <div class="trend-card glass-card"><div class="trend-icon">🔗</div><h4><a href="https://platform.openai.com/docs/guides/function-calling" target="_blank" style="color:inherit;text-decoration:none">Function Calling</a></h4><p>标准化的工具调用接口</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 8: 实战：天气 Agent -->
+    <section class="slide chapter" id="ch5">
+      <div class="chapter-header">
+        <span class="chapter-number">05</span>
+        <h2 class="chapter-title"><span class="gradient-text">实战</span>：天气 Agent</h2>
+      </div>
+      <div class="chapter-content">
+        <div class="workshop reveal">
+          <div class="workshop-steps">
+            <div class="ws-step glass-card"><div class="ws-header"><span class="ws-num">1</span><h4>定义角色</h4></div>
+              <div class="code-block"><pre><code>你是一个天气查询助手。
+使用 get_weather 工具查询天气。
+用简洁友好的语言回复。</code></pre></div>
+            </div>
+            <div class="ws-step glass-card"><div class="ws-header"><span class="ws-num">2</span><h4>设计工具</h4></div>
+              <div class="code-block"><pre><code>def get_weather(city: str) -> dict:
+    """获取城市天气信息"""
+    return {"temp": 28, "condition": "晴"}</code></pre></div>
+            </div>
+            <div class="ws-step glass-card"><div class="ws-header"><span class="ws-num">3</span><h4>组装运行</h4></div>
+              <div class="code-block"><pre><code>from agents import Agent, Runner
+
+agent = Agent(
+    name="天气助手",
+    instructions="你是天气助手",
+    tools=[get_weather]
+)
+result = Runner.run_sync(agent, "北京天气？")</code></pre></div>
+            </div>
+            <div class="ws-step glass-card"><div class="ws-header"><span class="ws-num">4</span><h4>测试迭代</h4></div>
+              <div class="result-demo glass-card">
+                <div class="demo-msg user-msg">👤 北京今天天气怎么样？</div>
+                <div class="demo-msg agent-msg">🤖 北京今天晴朗，28°C，湿度 45%，适合外出！</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <details class="deep-dive reveal">
+          <summary>✅ 最佳实践</summary>
+          <div class="deep-content">
+            <div class="practice-list">
+              <div class="practice-item glass-card"><span class="practice-num">01</span><div><h4>从小处开始</h4><p>先构建单一功能 Agent，验证后再扩展</p></div></div>
+              <div class="practice-item glass-card"><span class="practice-num">02</span><div><h4>Prompt 是核心</h4><p>80% 效果来自精心设计的 System Prompt</p></div></div>
+              <div class="practice-item glass-card"><span class="practice-num">03</span><div><h4>工具原子化 + Guardrails</h4><p>每个工具只做一件事，设置安全边界</p></div></div>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- Slide 9: Vibe Coding 0→1 完整教程 -->
+    <section class="slide chapter" id="ch7">
+      <div class="chapter-header">
+        <span class="chapter-number">07</span>
+        <h2 class="chapter-title"><span class="gradient-text">Vibe Coding 0→1</span> 完整教程</h2>
+      </div>
+      <div class="chapter-content">
+        <div class="protocol-card glass-card reveal">
+          <div class="protocol-header"><span class="protocol-icon">🎯</span><div><h3>用 Cursor 从零搭建「AI 简历生成器」全栈 App</h3><span class="protocol-tag">真实案例 · 全流程</span></div></div>
+          <p class="protocol-desc">以下是在 Cursor 中用 Vibe Coding 搭建一个<strong>「AI 简历生成器」</strong>的完整流程。用户输入个人信息，AI 自动生成专业简历 PDF。全程约 40 分钟。</p>
+        </div>
+
+        <!-- Step 0 -->
+        <div class="ws-step glass-card reveal">
+          <div class="ws-header"><span class="ws-num">0</span><h4>环境准备（5 分钟）</h4></div>
+          <div class="code-block"><pre><code># 1. 下载安装 Cursor（cursor.com）
+# 2. 打开 Cursor → 新建窗口 → Open Folder
+# 3. 选择一个空文件夹，如 ~/ai-resume-builder
+# 4. 打开 Cursor Chat（右下角 Chat 图标 或 Cmd+L）
+# 5. 选择模型：Claude Opus 4.8 或 GPT-5.5
+#
+# ✅ 环境就绪，开始 Vibe Coding！</code></pre></div>
+        </div>
+
+        <!-- Step 1 -->
+        <div class="ws-step glass-card reveal">
+          <div class="ws-header"><span class="ws-num">1</span><h4>描述需求 → AI 生成项目骨架</h4></div>
+          <div class="code-block"><pre><code># 在 Cursor Chat 中输入（注意结构化）：
+
+## 项目：AI 简历生成器
+## 技术栈：Next.js 14 + TypeScript + Tailwind CSS
+## 数据库：SQLite（via better-sqlite3）
+## AI：OpenAI API（GPT-5.5 生成简历内容）
+
+## 功能需求：
+1. 表单页：用户填写姓名、联系方式、教育背景、
+   工作经历、技能、项目经验
+2. 预览页：实时预览简历排版（支持 3 种模板）
+3. 导出页：一键导出为 PDF（使用 @react-pdf/renderer）
+4. AI 优化：点击"AI 优化"按钮，GPT 自动润色每段描述
+
+## UI 要求：
+- 深色主题，渐变色卡片
+- 响应式（桌面 + 移动端）
+- 表单分步填写（Step 1/2/3）
+
+请先创建项目结构（package.json、目录结构），
+然后实现表单页。</code></pre></div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="ws-step glass-card reveal">
+          <div class="ws-header"><span class="ws-num">2</span><h4>审查 + 接受 → 安装依赖</h4></div>
+          <div class="code-block"><pre><code># Cursor 会自动生成所有文件，你做的：
+
+# ✅ 审查 package.json — 确认依赖正确
+# ✅ 审查 app/layout.tsx — 确认布局合理
+# ✅ 审查 components/ — 确认组件结构清晰
+# ✅ 按 Cmd+Enter 逐个接受每个文件的修改
+
+# 在终端运行安装：
+npm install
+
+# 启动开发服务器：
+npm run dev
+
+# 打开浏览器访问 localhost:3000
+# 🎉 你已经有了一个可运行的项目骨架！</code></pre></div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="ws-step glass-card reveal">
+          <div class="ws-header"><span class="ws-num">3</span><h4>迭代开发 → 逐个功能实现</h4></div>
+          <div class="code-block"><pre><code># ⚠️ 关键原则：每次只做一个功能！
+
+# 第 2 轮对话：
+"实现表单的分步填写功能，
+ Step 1：基本信息（姓名、电话、邮箱、求职意向）
+ Step 2：工作经历（公司、职位、时间段、工作描述）
+ Step 3：技能和项目
+ 每步有上一步/下一步按钮，进度条显示当前步骤"
+
+# 第 3 轮对话：
+"实现简历预览页，
+ 根据表单数据实时渲染简历排版，
+ 使用 A4 纸比例，左右两栏布局
+ 左栏：联系方式 + 技能
+ 右栏：教育 + 工作经历 + 项目"
+
+# 第 4 轮对话：
+"实现 PDF 导出功能，
+ 使用 @react-pdf/renderer，
+ 点击'下载简历'按钮生成 PDF 并下载"</code></pre></div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="ws-step glass-card reveal">
+          <div class="ws-header"><span class="ws-num">4</span><h4>集成 AI → 智能润色</h4></div>
+          <div class="code-block"><pre><code># 第 5 轮对话：
+"添加 AI 优化功能：
+ 1. 在每个工作经历/项目描述旁加一个'AI 润色'按钮
+ 2. 点击后将描述发送到 OpenAI API（streaming）
+ 3. AI 返回优化后的版本，用户点击'采纳'替换原文
+ 4. 创建 API route: /api/optimize
+ 5. 系统提示词：你是专业简历顾问，请优化以下工作
+    描述，使其更量化、更有影响力、更专业"
+
+# 配置环境变量：
+# .env.local → OPENAI_API_KEY=sk-xxx
+
+# 第 6 轮对话：
+"添加 3 套简历模板：
+ 1. 极简（黑白，适合传统行业）
+ 2. 现代（渐变色，适合科技公司）
+ 3. 创意（彩色卡片，适合设计岗）
+ 在预览页顶部加模板切换 Tab"</code></pre></div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="ws-step glass-card reveal">
+          <div class="ws-header"><span class="ws-num">5</span><h4>调试 → 遇到问题直接问 AI</h4></div>
+          <div class="code-block"><pre><code># 常见问题的 Vibe Coding 解法：
+
+# 问题 1：报错
+"我运行 npm run dev 后报这个错误：
+ Error: Cannot find module '@react-pdf/renderer'
+ 帮我修复"
+
+# 问题 2：样式不对
+"预览页的简历排版在移动端错位了，
+ 帮我修复响应式布局"
+
+# 问题 3：功能不工作
+"点击 AI 润色按钮后没有响应，
+ 帮我检查 /api/optimize 路由是否正确"
+
+# 💡 关键：把报错信息完整粘贴给 AI
+#    AI 修 bug 的成功率 > 90%</code></pre></div>
+        </div>
+
+        <!-- Step 6 -->
+        <div class="ws-step glass-card reveal">
+          <div class="ws-header"><span class="ws-num">6</span><h4>部署上线 → 一键发布</h4></div>
+          <div class="code-block"><pre><code># 方式一：Vercel（推荐，免费）
+npx vercel deploy
+# 按提示操作，自动生成 https://xxx.vercel.app
+
+# 方式二：Netlify
+npx netlify-cli deploy --prod
+
+# 方式三：自己服务器
+npm run build
+# 将 .next 文件夹部署到你的服务器
+
+# 🚀 40 分钟，从零到上线！
+# 一个完整的 AI 简历生成器，可分享给别人使用</code></pre></div>
+        </div>
+
+        <!-- 关键技巧 -->
+        <details class="deep-dive reveal">
+          <summary>💡 Cursor 高效使用技巧（必读）</summary>
+          <div class="deep-content">
+            <div class="points-grid">
+              <div class="point-card glass-card"><span class="point-icon">💬</span><h4>Composer 模式</h4><p>Cmd+I 打开 Composer，可同时编辑多个文件，比 Chat 强 10 倍</p></div>
+              <div class="point-card glass-card"><span class="point-icon">⌘</span><h4>Cmd+K 行内编辑</h4><p>选中代码 → Cmd+K → 描述修改，精准到行</p></div>
+              <div class="point-card glass-card"><span class="point-icon">📎</span><h4>@ 引用上下文</h4><p>在 Chat 中 @file、@folder、@web 引用相关内容</p></div>
+              <div class="point-card glass-card"><span class="point-icon">🔄</span><h4>小步迭代</h4><p>每次只做 1 个功能，成功率比大改高 10 倍</p></div>
+              <div class="point-card glass-card"><span class="point-icon">🐛</span><h4>粘贴完整报错</h4><p>终端报错 → 全选复制 → 粘贴给 AI，它比你更擅长修</p></div>
+              <div class="point-card glass-card"><span class="point-icon">📋</span><h4>.cursorrules</h4><p>项目根目录创建此文件，写入你的编码规范，AI 每次都遵守</p></div>
+            </div>
+            <div class="protocol-card glass-card" style="margin-top:16px">
+              <p class="protocol-desc" style="text-align:center">
+                <strong>.cursorrules 示例：</strong>
+              </p>
+              <div class="code-block small"><pre><code># .cursorrules
+- 使用 TypeScript strict 模式
+- 组件用函数式写法，不用 class
+- CSS 用 Tailwind，不用内联样式
+- 所有 API 都要有错误处理
+- 代码注释用中文
+- 使用 ESLint + Prettier</code></pre></div>
+            </div>
+          </div>
+        </details>
+
+        <!-- 常见错误 -->
+        <details class="deep-dive reveal">
+          <summary>🚫 新手常犯的 5 个错误</summary>
+          <div class="deep-content">
+            <div class="points-grid">
+              <div class="point-card glass-card"><span class="point-icon">❌</span><h4>一次改太多</h4><p>不要说"重做整个项目"，要逐个功能迭代</p></div>
+              <div class="point-card glass-card"><span class="point-icon">❌</span><h4>不看生成的代码</h4><p>至少扫一眼关键逻辑，别盲目接受</p></div>
+              <div class="point-card glass-card"><span class="point-icon">❌</span><h4>不提交到 Git</h4><p>每完成一个功能就 git commit，方便回退</p></div>
+              <div class="point-card glass-card"><span class="point-icon">❌</span><h4>不写 .cursorrules</h4><p>没有规则文件，AI 每次生成的风格不一致</p></div>
+              <div class="point-card glass-card"><span class="point-icon">❌</span><h4>不测试就部署</h4><p>先 localhost 验证功能，再 npm run build 检查</p></div>
+            </div>
+          </div>
+        </details>
+
+        <!-- Vibe Coding 流程图 -->
+        <details class="deep-dive reveal">
+          <summary>🔄 Vibe Coding 完整工作流</summary>
+          <div class="deep-content">
+            <div class="arch-diagram" style="flex-wrap:wrap;gap:8px;justify-content:center">
+              <div class="arch-node glass-card node-input" style="min-width:100px"><span class="node-icon">💡</span><span>描述需求</span></div>
+              <div class="arch-arrow">→</div>
+              <div class="arch-node glass-card node-llm" style="min-width:100px"><span class="node-icon">🤖</span><span>AI 生成</span></div>
+              <div class="arch-arrow">→</div>
+              <div class="arch-node glass-card node-tools" style="min-width:100px"><span class="node-icon">👀</span><span>审查代码</span></div>
+              <div class="arch-arrow">→</div>
+              <div class="arch-node glass-card node-output" style="min-width:100px"><span class="node-icon">✅</span><span>接受/修改</span></div>
+              <div class="arch-arrow">→</div>
+              <div class="arch-node glass-card" style="min-width:100px;border-color:rgba(34,197,94,0.3)"><span class="node-icon">🧪</span><span>测试验证</span></div>
+              <div class="arch-arrow">→</div>
+              <div class="arch-node glass-card" style="min-width:100px;border-color:rgba(99,102,241,0.3)"><span class="node-icon">📦</span><span>Git 提交</span></div>
+            </div>
+            <div class="protocol-card glass-card" style="margin-top:16px">
+              <p class="protocol-desc" style="text-align:center">
+                <strong>核心循环：</strong>描述 → 生成 → 审查 → 测试 → 提交 → 下一个功能<br>
+                <span style="color:var(--text-muted);font-size:0.9rem">每个循环 5-15 分钟，一个 App 通常 10-20 个循环</span>
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- Git 工作流 -->
+        <details class="deep-dive reveal">
+          <summary>📦 Git 版本控制工作流</summary>
+          <div class="deep-content">
+            <div class="code-block"><pre><code># 项目开始时初始化 Git
+git init
+git add .
+git commit -m "feat: 初始化项目骨架"
+
+# 每完成一个功能就提交
+git add .
+git commit -m "feat: 实现表单分步填写"
+
+# 遇到问题想回退？
+git log --oneline           # 查看提交历史
+git revert HEAD             # 撤销上一次提交
+git checkout abc123 -- .    # 恢复到某个提交的文件
+
+# 💡 命名规范：
+# feat: 新功能
+# fix: 修复 bug
+# style: 样式调整
+# refactor: 重构</code></pre></div>
+          </div>
+        </details>
+
+        <!-- 测试策略 -->
+        <details class="deep-dive reveal">
+          <summary>🧪 测试策略（Vibe Coding 版）</summary>
+          <div class="deep-content">
+            <div class="points-grid">
+              <div class="point-card glass-card"><span class="point-icon">👁️</span><h4>视觉检查</h4><p>每实现一个功能，立刻在浏览器看效果，不要等全部做完</p></div>
+              <div class="point-card glass-card"><span class="point-icon">🔀</span><h4>边界测试</h4><p>空输入、超长输入、特殊字符、快速点击——这些最容易出 bug</p></div>
+              <div class="point-card glass-card"><span class="point-icon">📱</span><h4>响应式测试</h4><p>Chrome DevTools → 切换设备模拟，检查手机/平板显示</p></div>
+              <div class="point-card glass-card"><span class="point-icon">🏗️</span><h4>构建检查</h4><p>部署前运行 npm run build，TypeScript 会捕获类型错误</p></div>
+            </div>
+          </div>
+        </details>
+
+        <!-- Prompt 进阶 -->
+        <details class="deep-dive reveal">
+          <summary>✍️ Prompt 进阶：让 AI 更听话</summary>
+          <div class="deep-content">
+            <div class="comparison-grid">
+              <div class="compare-card glass-card">
+                <h4>❌ 模糊 Prompt</h4>
+                <div class="code-block small"><pre><code>"帮我做个登录页面"</code></pre></div>
+                <p style="color:var(--text-muted);font-size:0.85rem">AI 不知道用什么技术、什么风格、什么功能</p>
+              </div>
+              <div class="compare-vs">→</div>
+              <div class="compare-card glass-card highlight-card">
+                <h4>✅ 精准 Prompt</h4>
+                <div class="code-block small"><pre><code>"用 Next.js App Router 创建登录页：
+- 邮箱+密码表单，带验证
+- 支持 Google OAuth 登录
+- 深色主题，居中卡片布局
+- 错误提示用红色 toast
+- 成功后跳转 /dashboard
+- 使用 next-auth 实现认证"</code></pre></div>
+                <p style="color:var(--accent-1);font-size:0.85rem">具体技术栈 + 功能列表 + UI 要求 + 行为逻辑</p>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- AI 失败时怎么办 -->
+        <details class="deep-dive reveal">
+          <summary>🆘 AI 生成的代码有问题？急救指南</summary>
+          <div class="deep-content">
+            <div class="practice-list">
+              <div class="practice-item glass-card"><span class="practice-num">01</span><div><h4>直接粘贴报错</h4><p>终端报错 → 全选复制 → 粘贴给 AI → 90% 能修好</p></div></div>
+              <div class="practice-item glass-card"><span class="practice-num">02</span><div><h4>缩小问题范围</h4><p>不要说"整个页面坏了"，而是说"提交按钮点击后没有反应"</p></div></div>
+              <div class="practice-item glass-card"><span class="practice-num">03</span><div><h4>回退重来</h4><p>git revert 回到上一个好的状态，用不同的 Prompt 重新生成</p></div></div>
+              <div class="practice-item glass-card"><span class="practice-num">04</span><div><h4>换模型试试</h4><p>Claude 不行换 GPT，GPT 不行换 Gemini——不同模型擅长不同领域</p></div></div>
+              <div class="practice-item glass-card"><span class="practice-num">05</span><div><h4>手动修复关键部分</h4><p>AI 搞不定的部分，自己写几行代码解决，然后让 AI 继续</p></div></div>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- Slide 10: Vibe Coding 延伸 & AI 时代思维 -->
+    <section class="slide chapter" id="ch6">
+      <div class="chapter-header">
+        <span class="chapter-number">06</span>
+        <h2 class="chapter-title"><span class="gradient-text">Vibe Coding</span> 延伸 & AI 思维</h2>
+      </div>
+      <div class="chapter-content">
+        <div class="protocol-card glass-card reveal">
+          <div class="protocol-header"><span class="protocol-icon">🧭</span><div><h3>Vibe Coding → Vibe Everything</h3><span class="protocol-tag">从编程到一切</span></div></div>
+          <p class="protocol-desc">Vibe Coding 只是起点。真正的变革是<strong>用自然语言驱动一切创造性工作</strong>——设计、写作、研究、决策、交易、教育。</p>
+        </div>
+        <div class="trends-grid reveal">
+          <div class="trend-card glass-card"><div class="trend-icon">🎨</div><h4>Vibe Design</h4><p>用对话生成 UI/UX、品牌、视频</p></div>
+          <div class="trend-card glass-card"><div class="trend-icon">📊</div><h4>Vibe Trading</h4><p>Agent 自主分析市场+执行策略</p></div>
+          <div class="trend-card glass-card"><div class="trend-icon">🔬</div><h4>Vibe Research</h4><p>AI 驱动的科学发现与文献综述</p></div>
+          <div class="trend-card glass-card"><div class="trend-icon">📝</div><h4>Vibe Writing</h4><p>从创意到成稿的对话式创作</p></div>
+          <div class="trend-card glass-card"><div class="trend-icon">🎓</div><h4>Vibe Learning</h4><p>个性化 AI 导师，因材施教</p></div>
+          <div class="trend-card glass-card"><div class="trend-icon">🏗️</div><h4>Vibe Architecture</h4><p>自然语言描述→系统设计→代码生成</p></div>
+        </div>
+        <details class="deep-dive reveal">
+          <summary>🧠 AI 时代最重要的：思维 > 工具</summary>
+          <div class="deep-content">
+            <div class="points-grid">
+              <div class="point-card glass-card"><span class="point-icon">🎯</span><h4>问题定义能力</h4><p>AI 能解决问题，但定义正确的问题需要人类智慧。好的问题比答案更有价值。</p></div>
+              <div class="point-card glass-card"><span class="point-icon">🔗</span><h4>系统思维</h4><p>理解事物之间的关联，而非孤立看待。AI 是工具，系统思维决定如何组合工具。</p></div>
+              <div class="point-card glass-card"><span class="point-icon">💡</span><h4>批判性思维</h4><p>AI 可能幻觉、偏见、错误。你必须有能力判断输出的质量和可靠性。</p></div>
+              <div class="point-card glass-card"><span class="point-icon">🧭</span><h4>决策框架</h4><p>AI 提供信息，但价值观、权衡取舍、伦理判断是人类的责任。</p></div>
+              <div class="point-card glass-card"><span class="point-icon">🔄</span><h4>迭代思维</h4><p>Vibe Coding 的核心：不追求完美，快速原型→验证→改进。Fail fast, learn fast。</p></div>
+              <div class="point-card glass-card"><span class="point-icon">🌍</span><h4>跨域整合</h4><p>AI 让一个人可以做十个人的工作。关键是跨领域知识整合能力。</p></div>
+            </div>
+            <div class="protocol-card glass-card" style="margin-top:24px">
+              <div class="protocol-header"><span class="protocol-icon">💡</span><div><h3>核心公式</h3></div></div>
+              <p class="protocol-desc" style="font-size:1.3rem;text-align:center;padding:16px 0">
+                <strong style="color:var(--accent-1)">人类思维</strong> × <strong style="color:var(--accent-2)">AI 能力</strong> = <strong style="color:var(--accent-3)">指数级产出</strong>
+              </p>
+              <p class="protocol-desc" style="text-align:center">
+                工具会变，模型会换，但<strong>提出好问题、做出好决策、保持好奇心</strong>的能力永远稀缺。
+              </p>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 完成 -->
+    <section class="slide completion" id="completion">
+      <div class="completion-content">
+        <div class="completion-icon animate-fade-in">🎉</div>
+        <h2 class="completion-title animate-fade-in-up">恭喜完成！</h2>
+        <p class="completion-desc animate-fade-in-up delay-1">你已掌握 Vibe Coding 核心理念、Agent 架构和实战方法</p>
+        <div class="next-steps animate-fade-in-up delay-2">
+          <h3>🚀 下一步</h3>
+          <div class="step-cards">
+            <a class="step-card glass-card" href="https://cursor.sh" target="_blank"><span>下载 Cursor</span><small>开始 Vibe Coding</small></a>
+            <a class="step-card glass-card" href="https://openai.github.io/openai-agents-python/" target="_blank"><span>OpenAI Agents SDK</span><small>构建第一个 Agent</small></a>
+            <a class="step-card glass-card" href="https://github.com/langchain-ai/langgraph" target="_blank"><span>LangGraph</span><small>深入 Agent 编排</small></a>
+            <a class="step-card glass-card" href="https://github.com/openclaw/openclaw" target="_blank"><span>OpenClaw</span><small>多 Agent 协作</small></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 左右切换按钮 -->
+  <button class="slide-nav slide-prev" id="slidePrev" aria-label="上一页">←</button>
+  <button class="slide-nav slide-next" id="slideNext" aria-label="下一页">→</button>
+
+  <!-- 页码指示器 -->
+  <div class="slide-indicators" id="slideIndicators"></div>
+
+  <footer class="footer"><div class="footer-content"><p>⚡ Vibe Coding Tutorial · 2025-2026</p></div></footer>
+  <button class="back-to-top" id="backToTop">↑</button>
+  <script src="js/app.js"></script>
+  <script src="js/slides.js"></script>
+</body>
+</html>
